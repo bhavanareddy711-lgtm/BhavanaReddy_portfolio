@@ -29,6 +29,10 @@
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
+    header p a {
+      color: white;
+      text-decoration: underline;
+    }
 
     /* Sections */
     section {
@@ -91,6 +95,20 @@
       border-color: #4c6ef5;
     }
 
+    /* Experience & Internships */
+    .experience-item, .internship-item {
+      margin-bottom: 1rem;
+      background: #fff;
+      border-left: 4px solid #4c6ef5;
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .experience-item ul, .internship-item ul {
+      margin-top: 0.5rem;
+      padding-left: 1.2rem;
+    }
+
     /* Footer */
     footer {
       background: #333;
@@ -110,7 +128,7 @@
   <!-- Header -->
   <header>
     <h1>Bhavana Reddy</h1>
-    <p>Oxford | <a href="mailto:bhavanareddyec@gmail.com" style="color:white;">bhavanareddyec@gmail.com</a> | +44 7554469920</p>
+    <p>Oxford | <a href="mailto:bhavanareddyec@gmail.com">bhavanareddyec@gmail.com</a> | +44 7554469920</p>
   </header>
 
   <!-- Photo Section -->
@@ -123,12 +141,10 @@
   <section>
     <h2>About Me</h2>
     <p>
-      Experienced digital marketer with 1.5+ years of expertise in Marketing strategies,
-      Analytics, and paid Ads. Proven ability to drive revenue growth, lead generation, 
-      and engagement through data-driven strategies and growth marketing. Currently pursuing 
-      an MS in Management and Business Analytics from Oxford Brookes University, with a 
-      keen interest in leveraging data analytics, A/B testing, and predictive modeling 
-      for decision-making.
+      Experienced digital marketer with 1.5+ years of expertise in Marketing strategies, Analytics, and paid Ads.
+      Proven ability to drive revenue growth, lead generation, and engagement through data-driven marketing strategies and growth marketing.
+      Currently pursuing an MS in Management and Business Analytics from Oxford Brookes University, with a keen interest in leveraging data analytics, A/B testing, and predictive modeling for marketing decision-making.
+      Always eager to learn new things and adapt to emerging trends in marketing and analytics.
     </p>
   </section>
 
@@ -138,11 +154,38 @@
     <div class="skills-grid">
       <div class="skill">Digital Marketing & Branding</div>
       <div class="skill">Social Media Management</div>
-      <div class="skill">Content Strategy & SEO</div>
-      <div class="skill">Analytics & Data Visualization</div>
-      <div class="skill">Client Servicing & CRM</div>
-      <div class="skill">Influencer Marketing</div>
+      <div class="skill">Content Strategy & SEO Optimization</div>
+      <div class="skill">Analytics, Reports & Data Visualization</div>
+      <div class="skill">Client Servicing & CRM Management</div>
+      <div class="skill">Influencer Marketing & Lead Generation</div>
       <div class="skill">Paid Ads</div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section>
+    <h2>Experience</h2>
+
+    <div class="experience-item">
+      <strong>Social Media and Influencer Marketer</strong> (Brand Scale Up Inc.) – Jan 2024 to Sept 2025
+      <ul>
+        <li>Developed and executed SEO-optimized social media strategies, boosting organic reach and engagement by 127%.</li>
+        <li>Maintained campaign calendars, performance trackers, and planning documents for multiple initiatives.</li>
+        <li>Coordinated with cross-functional teams to meet campaign timelines and deliverables.</li>
+        <li>Prepared weekly performance reports and presentations for leadership.</li>
+        <li>Managed influencer campaigns, increasing brand awareness and follower growth by 30%.</li>
+      </ul>
+    </div>
+
+    <div class="experience-item">
+      <strong>Marketing Executive</strong> (Breakout Escape Rooms) – 2022 to 2023
+      <ul>
+        <li>Increased revenue 10X in 3 months through data-driven offline marketing strategies.</li>
+        <li>Optimized Facebook Ads campaigns, improving ROI and conversion rates by 11X.</li>
+        <li>Coordinated marketing projects and tracked progress against deadlines.</li>
+        <li>Prepared marketing performance dashboards using Google Analytics and CRM insights.</li>
+        <li>Implemented social media strategy, raising engagement rate from 3.5% to 8%.</li>
+      </ul>
     </div>
   </section>
 
@@ -150,10 +193,39 @@
   <section>
     <h2>Education</h2>
     <ul>
-      <li><strong>Oxford Brookes University</strong> – MSc Management & Business Analytics <br>
+      <li>
+        <strong>Oxford Brookes University</strong> – MSc Management & Business Analytics <br>
         Skills: Python, R, Tableau, Data Analytics, SQL, Power BI
       </li>
-      <li><strong>Bangalore University</strong> – BBA in Marketing</li>
+      <li>
+        <strong>Bangalore University</strong> – BBA in Marketing
+      </li>
+    </ul>
+  </section>
+
+  <!-- Internships -->
+  <section>
+    <h2>Internships</h2>
+    <div class="internship-item">
+      <strong>Game Master</strong> (Breakout Escape Rooms)
+      <ul>
+        <li>Managed escape room games, assisted clients, and created engaging customer experiences.</li>
+      </ul>
+    </div>
+    <div class="internship-item">
+      <strong>English Tutor (Volunteer)</strong> (Eco-Exist NGO)
+      <ul>
+        <li>Taught spoken English and grammar to children (ages 7–14) through phone-based lessons.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Additional Info -->
+  <section>
+    <h2>Additional Info</h2>
+    <ul>
+      <li>Languages: English, Hindi, Telugu, Kannada</li>
+      <li>Hobby: Fitness and Arts</li>
     </ul>
   </section>
 
@@ -165,7 +237,7 @@
     </p>
   </footer>
 
-  <!-- 👇 Fade-in Script -->
+  <!-- Fade-in Script -->
   <script>
     const sections = document.querySelectorAll("section");
 
