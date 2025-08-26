@@ -29,16 +29,21 @@
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
-    header p {
-      font-size: 1rem;
-    }
 
     /* Sections */
     section {
       padding: 3rem 2rem;
       max-width: 900px;
       margin: auto;
+      opacity: 0;               /* hidden by default */
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     section h2 {
       font-size: 1.8rem;
       color: #4c6ef5;
@@ -46,15 +51,25 @@
       border-left: 4px solid #4c6ef5;
       padding-left: 0.5rem;
     }
-    section ul {
-      list-style: none;
-      margin-left: 1rem;
+
+    /* Photo section */
+    .photo-section {
+      text-align: center;
+      margin-top: 2rem;
     }
-    section ul li {
-      margin-bottom: 0.8rem;
+    .photo-section img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #4c6ef5;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    .photo-section img:hover {
+      transform: scale(1.05);
     }
 
-    /* Skills in grid */
+    /* Skills grid */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -68,6 +83,12 @@
       border-radius: 8px;
       text-align: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .skill:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+      border-color: #4c6ef5;
     }
 
     /* Footer */
@@ -92,6 +113,12 @@
     <p>Oxford | <a href="mailto:bhavanareddyec@gmail.com" style="color:white;">bhavanareddyec@gmail.com</a> | +44 7554469920</p>
   </header>
 
+  <!-- Photo Section -->
+  <section class="photo-section">
+    <img src="https://via.placeholder.com/180" alt="Bhavana Reddy Photo">
+    <p style="margin-top:1rem; font-weight:bold; color:#444;">Hi, I’m Bhavana 👋</p>
+  </section>
+
   <!-- About -->
   <section>
     <h2>About Me</h2>
@@ -103,29 +130,6 @@
       keen interest in leveraging data analytics, A/B testing, and predictive modeling 
       for decision-making.
     </p>
-  </section>
-
-  <!-- Experience -->
-  <section>
-    <h2>Experience</h2>
-    <ul>
-      <li><strong>Social Media & Influencer Marketer (Brand Scale Up Inc.)</strong> | Jan 2024 – Sept 2025
-        <ul>
-          <li>Boosted organic reach & engagement by 127% through SEO-optimized social strategies.</li>
-          <li>Managed campaign calendars, trackers, and deliverables across teams.</li>
-          <li>Prepared weekly reports & identified optimization opportunities.</li>
-          <li>Ran influencer campaigns, growing brand awareness by 30%.</li>
-        </ul>
-      </li>
-      <li><strong>Marketing Executive (Breakout Escape Rooms)</strong> | 2022 – 2023
-        <ul>
-          <li>Increased revenue by 10X (offline strategies) & 11X (Facebook Ads).</li>
-          <li>Coordinated cross-team marketing projects and tracked performance.</li>
-          <li>Developed analytics dashboards for strategy optimization.</li>
-          <li>Raised engagement rate from 3.5% → 8% via social strategy.</li>
-        </ul>
-      </li>
-    </ul>
   </section>
 
   <!-- Skills -->
@@ -153,24 +157,6 @@
     </ul>
   </section>
 
-  <!-- Internships -->
-  <section>
-    <h2>Internships</h2>
-    <ul>
-      <li><strong>Game Master (Breakout Escape Rooms)</strong> – Managed escape room games and client experiences.</li>
-      <li><strong>English Tutor (Eco-Exist NGO)</strong> – Taught English to children (ages 7–14).</li>
-    </ul>
-  </section>
-
-  <!-- Additional Info -->
-  <section>
-    <h2>Additional Info</h2>
-    <ul>
-      <li><strong>Languages:</strong> English, Hindi, Telugu, Kannada</li>
-      <li><strong>Hobbies:</strong> Fitness & Arts</li>
-    </ul>
-  </section>
-
   <!-- Footer -->
   <footer>
     <p>© 2025 Bhavana Reddy | Connect via 
@@ -178,5 +164,24 @@
       <a href="https://www.linkedin.com">LinkedIn</a>
     </p>
   </footer>
+
+  <!-- 👇 Fade-in Script -->
+  <script>
+    const sections = document.querySelectorAll("section");
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < triggerBottom) {
+          section.classList.add("visible");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+  </script>
 </body>
 </html>
