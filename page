@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhavana Reddy | Portfolio</title>
+  <style>
+    /* Reset & Fonts */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Arial", sans-serif;
+    }
+    body {
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(to right, #4c6ef5, #15aabf);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      color: #4c6ef5;
+      margin-bottom: 1rem;
+      border-left: 4px solid #4c6ef5;
+      padding-left: 0.5rem;
+    }
+    section ul {
+      list-style: none;
+      margin-left: 1rem;
+    }
+    section ul li {
+      margin-bottom: 0.8rem;
+    }
+
+    /* Skills in grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .skill {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: #15aabf;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Bhavana Reddy</h1>
+    <p>Oxford | <a href="mailto:bhavanareddyec@gmail.com" style="color:white;">bhavanareddyec@gmail.com</a> | +44 7554469920</p>
+  </header>
+
+  <!-- About -->
+  <section>
+    <h2>About Me</h2>
+    <p>
+      Experienced digital marketer with 1.5+ years of expertise in Marketing strategies,
+      Analytics, and paid Ads. Proven ability to drive revenue growth, lead generation, 
+      and engagement through data-driven strategies and growth marketing. Currently pursuing 
+      an MS in Management and Business Analytics from Oxford Brookes University, with a 
+      keen interest in leveraging data analytics, A/B testing, and predictive modeling 
+      for decision-making.
+    </p>
+  </section>
+
+  <!-- Experience -->
+  <section>
+    <h2>Experience</h2>
+    <ul>
+      <li><strong>Social Media & Influencer Marketer (Brand Scale Up Inc.)</strong> | Jan 2024 – Sept 2025
+        <ul>
+          <li>Boosted organic reach & engagement by 127% through SEO-optimized social strategies.</li>
+          <li>Managed campaign calendars, trackers, and deliverables across teams.</li>
+          <li>Prepared weekly reports & identified optimization opportunities.</li>
+          <li>Ran influencer campaigns, growing brand awareness by 30%.</li>
+        </ul>
+      </li>
+      <li><strong>Marketing Executive (Breakout Escape Rooms)</strong> | 2022 – 2023
+        <ul>
+          <li>Increased revenue by 10X (offline strategies) & 11X (Facebook Ads).</li>
+          <li>Coordinated cross-team marketing projects and tracked performance.</li>
+          <li>Developed analytics dashboards for strategy optimization.</li>
+          <li>Raised engagement rate from 3.5% → 8% via social strategy.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">Digital Marketing & Branding</div>
+      <div class="skill">Social Media Management</div>
+      <div class="skill">Content Strategy & SEO</div>
+      <div class="skill">Analytics & Data Visualization</div>
+      <div class="skill">Client Servicing & CRM</div>
+      <div class="skill">Influencer Marketing</div>
+      <div class="skill">Paid Ads</div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section>
+    <h2>Education</h2>
+    <ul>
+      <li><strong>Oxford Brookes University</strong> – MSc Management & Business Analytics <br>
+        Skills: Python, R, Tableau, Data Analytics, SQL, Power BI
+      </li>
+      <li><strong>Bangalore University</strong> – BBA in Marketing</li>
+    </ul>
+  </section>
+
+  <!-- Internships -->
+  <section>
+    <h2>Internships</h2>
+    <ul>
+      <li><strong>Game Master (Breakout Escape Rooms)</strong> – Managed escape room games and client experiences.</li>
+      <li><strong>English Tutor (Eco-Exist NGO)</strong> – Taught English to children (ages 7–14).</li>
+    </ul>
+  </section>
+
+  <!-- Additional Info -->
+  <section>
+    <h2>Additional Info</h2>
+    <ul>
+      <li><strong>Languages:</strong> English, Hindi, Telugu, Kannada</li>
+      <li><strong>Hobbies:</strong> Fitness & Arts</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Bhavana Reddy | Connect via 
+      <a href="mailto:bhavanareddyec@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com">LinkedIn</a>
+    </p>
+  </footer>
+</body>
+</html>
