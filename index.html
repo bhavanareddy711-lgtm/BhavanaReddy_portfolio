@@ -1,80 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bhavana Reddy | Portfolio</title>
   <style>
     /* Reset & Fonts */
-    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
-    body { background: #f9f9f9; color: #333; line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Arial", sans-serif;
+    }
+    body {
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
 
-    /* Header & Nav */
-    header { background: linear-gradient(to right,#4c6ef5,#15aabf); color:white; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
-    header h1 { font-size:2rem; }
-    nav a { margin:0 1rem; font-weight:bold; color:white; transition:opacity 0.3s; }
-    nav a:hover { opacity:0.7; }
+    /* Header */
+    header {
+      background: linear-gradient(to right, #4c6ef5, #15aabf);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p a {
+      color: white;
+      text-decoration: underline;
+    }
 
     /* Sections */
-    section { padding:3rem 2rem; max-width:900px; margin:auto; }
-    section h2 { font-size:1.8rem; color:#4c6ef5; margin-bottom:1rem; border-left:4px solid #4c6ef5; padding-left:0.5rem; }
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      opacity: 0;               /* hidden by default */
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-    /* Photo Section */
-    .photo-section { text-align:center; margin-top:2rem; }
-    .photo-section img { width:180px; height:180px; border-radius:50%; border:4px solid #4c6ef5; box-shadow:0 4px 12px rgba(0,0,0,0.15); transition: transform 0.3s ease; }
-    .photo-section img:hover { transform:scale(1.05); }
-    .photo-section p { margin-top:1rem; font-weight:bold; color:#444; }
+    section h2 {
+      font-size: 1.8rem;
+      color: #4c6ef5;
+      margin-bottom: 1rem;
+      border-left: 4px solid #4c6ef5;
+      padding-left: 0.5rem;
+    }
 
-    /* Skills Grid */
-    .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin-top:1rem; }
-    .skill { background:#fff; border:1px solid #ddd; padding:1rem; border-radius:8px; text-align:center; box-shadow:0 2px 4px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; }
-    .skill:hover { transform: translateY(-6px); box-shadow:0 6px 14px rgba(0,0,0,0.15); border-color:#4c6ef5; }
+    /* Photo section */
+    .photo-section {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .photo-section img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #4c6ef5;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    .photo-section img:hover {
+      transform: scale(1.05);
+    }
 
-    /* Experience / Education / Internships */
-    .experience-item, .internship-item { margin-bottom:1rem; background:#fff; border-left:4px solid #4c6ef5; padding:1rem; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.05); }
-    .experience-item ul, .internship-item ul { margin-top:0.5rem; padding-left:1.2rem; }
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .skill {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .skill:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+      border-color: #4c6ef5;
+    }
 
-    /* Portfolio Section */
-    .portfolio-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem; margin-top:1rem; }
-    .portfolio-grid img { width:100%; height:auto; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
-    .portfolio-grid img:hover { transform:scale(1.05); }
-
-    /* Contact Section */
-    .contact-info { background:#fff; padding:2rem; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.05); max-width:600px; margin:auto; }
-    .contact-info p { margin:0.5rem 0; }
-    .contact-info a { color:#15aabf; }
+    /* Experience & Internships */
+    .experience-item, .internship-item {
+      margin-bottom: 1rem;
+      background: #fff;
+      border-left: 4px solid #4c6ef5;
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .experience-item ul, .internship-item ul {
+      margin-top: 0.5rem;
+      padding-left: 1.2rem;
+    }
 
     /* Footer */
-    footer { background:#333; color:white; text-align:center; padding:1.5rem; margin-top:2rem; }
-    footer a { color:#15aabf; text-decoration:none; margin:0 0.5rem; }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: #15aabf;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <h1>Bhavana Reddy</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <p>Oxford | <a href="mailto:bhavanareddyec@gmail.com">bhavanareddyec@gmail.com</a> | +44 7554469920</p>
   </header>
 
-  <!-- About Section -->
-  <section id="about">
+  <!-- Photo Section -->
+  <section class="photo-section">
+    <img src="Screenshot%202025-08-26%20215909.png" alt="Bhavana Reddy Photo">
+    <p style="margin-top:1rem; font-weight:bold; color:#444;">Hi, I’m Bhavana 👋</p>
+  </section>
+
+  <!-- About -->
+  <section>
     <h2>About Me</h2>
-    <div class="photo-section">
-      <img src="Screenshot%202025-08-26%20215909.png" alt="Bhavana Reddy Photo" loading="lazy">
-      <p>Hi, I’m Bhavana 👋</p>
-    </div>
     <p>
       Experienced digital marketer with 1.5+ years of expertise in Marketing strategies, Analytics, and paid Ads.
       Proven ability to drive revenue growth, lead generation, and engagement through data-driven marketing strategies and growth marketing.
       Currently pursuing an MS in Management and Business Analytics from Oxford Brookes University, with a keen interest in leveraging data analytics, A/B testing, and predictive modeling for marketing decision-making.
       Always eager to learn new things and adapt to emerging trends in marketing and analytics.
     </p>
+  </section>
 
+  <!-- Skills -->
+  <section>
     <h2>Skills</h2>
     <div class="skills-grid">
       <div class="skill">Digital Marketing & Branding</div>
@@ -85,8 +160,12 @@
       <div class="skill">Influencer Marketing & Lead Generation</div>
       <div class="skill">Paid Ads</div>
     </div>
+  </section>
 
+  <!-- Experience -->
+  <section>
     <h2>Experience</h2>
+
     <div class="experience-item">
       <strong>Social Media and Influencer Marketer</strong> (Brand Scale Up Inc.) – Jan 2024 to Sept 2024
       <ul>
@@ -97,6 +176,7 @@
         <li>Managed influencer campaigns, increasing brand awareness and follower growth by 30%.</li>
       </ul>
     </div>
+
     <div class="experience-item">
       <strong>Marketing Executive</strong> (Breakout Escape Rooms) – Oct 2022 to Nov 2023
       <ul>
@@ -107,71 +187,73 @@
         <li>Implemented social media strategy, raising engagement rate from 3.5% to 8%.</li>
       </ul>
     </div>
+  </section>
 
+  <!-- Education -->
+  <section>
     <h2>Education</h2>
     <ul>
-      <li><strong>Oxford Brookes University</strong> – MSc Management & Business Analytics <br>Skills: Python, R, Tableau, Data Analytics, SQL, Power BI</li>
-      <li><strong>Bangalore University</strong> – BBA in Marketing</li>
+      <li>
+        <strong>Oxford Brookes University</strong> – MSc Management & Business Analytics <br>
+        Skills: Python, R, Tableau, Data Analytics, SQL, Power BI
+      </li>
+      <li>
+        <strong>Bangalore University</strong> – BBA in Marketing
+      </li>
     </ul>
+  </section>
 
+  <!-- Internships -->
+  <section>
     <h2>Internships</h2>
     <div class="internship-item">
       <strong>Game Master</strong> (Breakout Escape Rooms)
-      <ul><li>Managed escape room games, assisted clients, and created engaging customer experiences.</li></ul>
+      <ul>
+        <li>Managed escape room games, assisted clients, and created engaging customer experiences.</li>
+      </ul>
     </div>
     <div class="internship-item">
       <strong>English Tutor (Volunteer)</strong> (Eco-Exist NGO)
-      <ul><li>Taught spoken English and grammar to children (ages 7–14) through phone-based lessons.</li></ul>
+      <ul>
+        <li>Taught spoken English and grammar to children (ages 7–14) through phone-based lessons.</li>
+      </ul>
     </div>
   </section>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <h2>Portfolio</h2>
-
-    <h3>Facebook Ads</h3>
-    <div class="portfolio-grid">
-      <img src="facebook1.png" alt="Facebook Ad 1">
-      <img src="facebook2.png" alt="Facebook Ad 2">
-      <img src="facebook3.png" alt="Facebook Ad 3">
-    </div>
-
-    <h3>Social Media Content</h3>
-    <div class="portfolio-grid">
-      <img src="social1.png" alt="Social Media Content 1">
-      <img src="social2.png" alt="Social Media Content 2">
-      <img src="social3.png" alt="Social Media Content 3">
-    </div>
-
-    <h3>Email Marketing</h3>
-    <div class="portfolio-grid">
-      <img src="email1.png" alt="Email Marketing 1">
-      <img src="email2.png" alt="Email Marketing 2">
-      <img src="email3.png" alt="Email Marketing 3">
-    </div>
-
-    <h3>Dashboards</h3>
-    <div class="portfolio-grid">
-      <img src="dashboard1.png" alt="Dashboard 1">
-      <img src="dashboard2.png" alt="Dashboard 2">
-      <img src="dashboard3.png" alt="Dashboard 3">
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <div class="contact-info">
-      <p>Email: <a href="mailto:bhavanareddyec@gmail.com">bhavanareddyec@gmail.com</a></p>
-      <p>Phone: <a href="tel:+447554469920">+44 7554469920</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/bhavana-reddy-ec/">https://www.linkedin.com/in/bhavana-reddy-ec/</a></p>
-      <p>Location: Oxford</p>
-    </div>
+  <!-- Additional Info -->
+  <section>
+    <h2>Additional Info</h2>
+    <ul>
+      <li>Languages: English, Hindi, Telugu, Kannada</li>
+      <li>Hobby: Fitness and Arts</li>
+    </ul>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Bhavana Reddy</p>
+    <p>© 2025 Bhavana Reddy | Connect via 
+      <a href="mailto:bhavanareddyec@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/bhavana-reddy-ec/">LinkedIn</a>
+    </p>
   </footer>
+
+  <!-- Fade-in Script -->
+  <script>
+    const sections = document.querySelectorAll("section");
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < triggerBottom) {
+          section.classList.add("visible");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+  </script>
 </body>
 </html>
