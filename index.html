@@ -1,17 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bhavana Reddy | About</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset & Fonts */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Arial", sans-serif;
+    }
+
+    body {
+      background: #d9e6dc; /* pastel green background */
+      color: #1a1a40;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(to right, #1a1a40, #3c6e71);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.3rem;
+    }
+    header p a {
+      color: #f4f4f4;
+      text-decoration: underline;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      color: #f4f4f4;
+      margin: 0 0.8rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #d9e6dc;
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 2rem;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      color: #1a1a40;
+      margin-bottom: 1rem;
+      border-left: 5px solid #3c6e71;
+      padding-left: 0.6rem;
+    }
+
+    /* Photo section */
+    .photo-section {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .photo-section img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #3c6e71;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    .photo-section img:hover {
+      transform: scale(1.05);
+    }
+    .photo-section p {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #1a1a40;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .skill {
+      background: linear-gradient(135deg, #d9e6dc, #ffffff);
+      border: 2px solid #3c6e71;
+      padding: 1.5rem;
+      border-radius: 16px;
+      text-align: center;
+      font-weight: 600;
+      color: #1a1a40;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+    .skill:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+      background: linear-gradient(135deg, #cce0d6, #f7faf9);
+    }
+
+    /* Experience & Internships */
+    .experience-item, .internship-item {
+      margin-bottom: 1.8rem;
+      background: linear-gradient(120deg, #ffffff, #d9e6dc);
+      border-left: 6px solid #1a1a40;
+      padding: 1.5rem 1.2rem;
+      border-radius: 14px;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .experience-item:hover, .internship-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.2);
+    }
+    .experience-item ul, .internship-item ul {
+      margin-top: 0.6rem;
+      padding-left: 1.4rem;
+      color: #333;
+    }
+    .experience-item li, .internship-item li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #1a1a40;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: #d9e6dc;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <h1>Bhavana Reddy</h1>
+    <p>Oxford | <a href="mailto:bhavanareddyec@gmail.com">bhavanareddyec@gmail.com</a> | +44 7554469920</p>
     <nav>
-      <a href="index.html">About</a>
+      <a href="about.html">About</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -19,12 +161,12 @@
 
   <!-- Photo Section -->
   <section class="photo-section">
-    <img src="Screenshot%202025-08-26%20215909.png" alt="Bhavana Reddy Photo" loading="lazy">
+    <img src="Screenshot%202025-08-26%20215909.png" alt="Bhavana Reddy Photo">
     <p>Hi, I’m Bhavana 👋</p>
   </section>
 
-  <!-- About Section -->
-  <section id="about">
+  <!-- About -->
+  <section>
     <h2>About Me</h2>
     <p>
       Experienced digital marketer with 1.5+ years of expertise in Marketing strategies, Analytics, and paid Ads.
@@ -32,7 +174,10 @@
       Currently pursuing an MS in Management and Business Analytics from Oxford Brookes University, with a keen interest in leveraging data analytics, A/B testing, and predictive modeling for marketing decision-making.
       Always eager to learn new things and adapt to emerging trends in marketing and analytics.
     </p>
+  </section>
 
+  <!-- Skills -->
+  <section>
     <h2>Skills</h2>
     <div class="skills-grid">
       <div class="skill">Digital Marketing & Branding</div>
@@ -43,7 +188,10 @@
       <div class="skill">Influencer Marketing & Lead Generation</div>
       <div class="skill">Paid Ads</div>
     </div>
+  </section>
 
+  <!-- Experience -->
+  <section>
     <h2>Experience</h2>
     <div class="experience-item">
       <strong>Social Media and Influencer Marketer</strong> (Brand Scale Up Inc.) – Jan 2024 to Sept 2024
@@ -65,26 +213,54 @@
         <li>Implemented social media strategy, raising engagement rate from 3.5% to 8%.</li>
       </ul>
     </div>
+  </section>
 
+  <!-- Education -->
+  <section>
     <h2>Education</h2>
     <ul>
-      <li><strong>Oxford Brookes University</strong> – MSc Management & Business Analytics <br>Skills: Python, R, Tableau, Data Analytics, SQL, Power BI</li>
-      <li><strong>Bangalore University</strong> – BBA in Marketing</li>
+      <li>
+        <strong>Oxford Brookes University</strong> – MSc Management & Business Analytics <br>
+        Skills: Python, R, Tableau, Data Analytics, SQL, Power BI
+      </li>
+      <li>
+        <strong>Bangalore University</strong> – BBA in Marketing
+      </li>
     </ul>
+  </section>
 
+  <!-- Internships -->
+  <section>
     <h2>Internships</h2>
     <div class="internship-item">
       <strong>Game Master</strong> (Breakout Escape Rooms)
-      <ul><li>Managed escape room games, assisted clients, and created engaging customer experiences.</li></ul>
+      <ul>
+        <li>Managed escape room games, assisted clients, and created engaging customer experiences.</li>
+      </ul>
     </div>
     <div class="internship-item">
       <strong>English Tutor (Volunteer)</strong> (Eco-Exist NGO)
-      <ul><li>Taught spoken English and grammar to children (ages 7–14) through phone-based lessons.</li></ul>
+      <ul>
+        <li>Taught spoken English and grammar to children (ages 7–14) through phone-based lessons.</li>
+      </ul>
     </div>
   </section>
 
+  <!-- Additional Info -->
+  <section>
+    <h2>Additional Info</h2>
+    <ul>
+      <li>Languages: English, Hindi, Telugu, Kannada</li>
+      <li>Hobby: Fitness and Arts</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Bhavana Reddy</p>
+    <p>© 2025 Bhavana Reddy | Connect via 
+      <a href="mailto:bhavanareddyec@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/bhavana-reddy-ec/">LinkedIn</a>
+    </p>
   </footer>
 </body>
 </html>
